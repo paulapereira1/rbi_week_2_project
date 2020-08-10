@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Breakfast Habits Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>🥐 Breakfast Habits Insights 🔍</header>
+    <main>
+      <h1>Here are some insights...</h1>
+      <section id="insights">
+        <div class="previewCard">
+          <p>
+            50% of respondents have breakfast every single day, and majority has
+            almost every day.
+          </p>
+          <img
+            src="Images/breakfast_days.png"
+            alt="how many days a week do you have breakfast"
+          />
+        </div>
+        <div class="previewCard">
+          <p>
+            Most respondents always have breakfast at home, but ~50% will go out
+            for breakfast once or twice a week.
+          </p>
+          <img
+            src="Images/breakfast_out.png"
+            alt="how many days a week do you eat breakfast out"
+          />
+        </div>
+        <div class="previewCard">
+          <p>
+            Local restaurants and delis are the most popular destinations for
+            breakfast out of home.
+          </p>
+          <img
+            src="Images/breakfast_out_place.png"
+            alt="Where do you eat breakfast out"
+          />
+        </div>
+        <div class="previewCard">
+          <p>
+            Most respondents, 57%, are health conscious when it comes to their
+            breakfast, but 28% choose to eat what they crave once they wake up.
+          </p>
+          <img
+            src="Images/breakfast_type.png"
+            alt="What type of breakfast do you have"
+          />
+        </div>
+        <div class="previewCard">
+          <p>
+            Eggs, fruits, bread with some sort of spread and coffee are the most
+            popular breakfast items, respectively.
+          </p>
+          <img
+            src="Images/popular_items.png"
+            alt="What items do you typically have for breakfast"
+          />
+        </div>
+      </section>
+      <section id="question-responses">
+        <h2>What is everyone's favorite breakfast item?</h2>
+      </section>
+      <div id="winner-section">
+        <h2>
+          And the winner is... <span id="winner"></span
+          ><button id="button">Click For Winner</button>
+        </h2>
+      </div>
+      <h1>Individual Responses</h1>
+      <section id="user-responses">
+        <h2>
+          Please wait while we fetch the most important meal of the day...
+        </h2>
+      </section>
+      <h3>
+        Key:
+        <ul>
+          <li>Breakfast sandwich/wrap =🥪</li>
+          <li>
+            Bread with some sort of spread (i.e. jam/jelly, cream cheese,
+            butter, etc. = 🍞
+          </li>
+          <li>Eggs = 🍳</li>
+          <li>Fruits = 🍌</li>
+          <li>Yogurt = 🍥</li>
+          <li>Smoothie =🥤</li>
+          <li>Cereal = 🥣</li>
+          <li>Muffins/Cakes = 🧁</li>
+          <li>Donuts = 🍩</li>
+          <li>Sausage/Bacon = 🥓</li>
+          <li>Pancakes/Waffles = 🥞</li>
+          <li>Juice = 🧃</li>
+          <li>Coffee = ☕️</li>
+          <li>Tea = 🍵</li>
+          <li>Oats/Muesli = 🌾</li>
+        </ul>
+      </h3>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.2.0/papaparse.min.js"></script>
+    <script src="data.js"></script>
+  </body>
+</html>

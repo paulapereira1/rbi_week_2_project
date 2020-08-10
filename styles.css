@@ -1,0 +1,119 @@
+body {
+  background: rgb(207, 161, 34, 0.3);
+  font-family: Georgia;
+}
+
+header {
+  background-color: white;
+  color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia;
+  font-size: 40px;
+}
+
+main {
+  max-width: 80rem;
+  margin: 8rem auto 0 auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+}
+
+#user-responses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-gap: 1rem;
+  margin: 0 auto 2rem auto;
+}
+
+#insights {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+  margin: 0 auto 4rem auto;
+}
+.previewCard {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+p {
+  margin: 0.2rem;
+  font-size: 18px;
+  font-style: italic;
+}
+
+.previewCard img {
+  height: 25rem;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 2%;
+}
+
+#question-responses {
+  background-color: white;
+  padding: 1rem;
+  place-items: center;
+}
+
+.user-response {
+  background-color: white;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.breakfast-type {
+  text-transform: lowercase;
+}
+
+.user-response img {
+  height: 25rem;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2%;
+}
+
+#winner-section {
+  margin: 0 auto 4rem auto;
+  background-color: rgb(212, 173, 96, 0.8);
+  padding: 1rem;
+}
+
+h3 {
+  font-size: 20px;
+  margin: 0.2rem;
+}
+
+h1 {
+  font-size: 30px;
+  font-style: bold;
+}
+/* #winner.click {
+  animation: spinAndGrow 1s infinite;
+}
+
+@keyframes spinAndGrow {
+  0% {
+    transform: scale(1) rotate(0deg);
+    color: black;
+  }
+  50% {
+    transform: scale(10) rotate(360deg);
+    color: purple;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    color: black;
+  }
+} */
