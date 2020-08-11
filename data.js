@@ -108,18 +108,30 @@ const fetchAndShowResponses = async () => {
 
 fetchAndShowResponses();
 
-const responsesFilter = responses => {
-  const selectedAge = ageSelect.value
-  const selectedLocation = locationSelect.value
-  const searchTerm = searchInput.value.toLowerCase()
-  return (selectedAge === "all" || responses.age === selectedAge) &&
-  (selectedLocation === "all" || responses.location === selectedLocation) &&
-  (responses.name.toLowerCase().includes(searchTerm) || responses.toLowerCase().includes(searchTerm))
-}
+// const responsesFilter = responses => {
+//   const selectedAge = ageSelect.value
+//   const selectedLocation = locationSelect.value
+//   const searchTerm = searchInput.value.toLowerCase()
+//   return (selectedAge === "all" || responses.age === selectedAge) &&
+//   (selectedLocation === "all" || responses.location === selectedLocation) &&
+//   (responses.name.toLowerCase().includes(searchTerm) || responses.toLowerCase().includes(searchTerm))
+// }
+
+function responsesFilter(userResponse) {
+  const selectedLocation = userResponse['Where do you live?'];
+  const selectedAge = userResponse['How old are you?'];
+  const searchTerm = searchInput.value.toLowerCase();
+  return (name.toLowerCase().includes(searchTerm) || 
+  (selectedAge === "All" || age === selectedAge) &&
+  (selectedLocation === "All" || location === selectedLocation)
+  )};
+
+
+
 
 const handleFilterInput = () => {
   const filteredResponsesFilter = responses.filter(responsesFilter)
-  main.innerHTML = filteredResponsesFilter.map(renderUserResponse).join("")
+  main.innerHTML = filteredResponsesFilter.map(renderUserResponse).join("");
 }
 
 ageSelect.addEventListener('input', handleFilterInput)
