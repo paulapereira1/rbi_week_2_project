@@ -100,6 +100,26 @@ h1 {
   font-size: 40px;
   font-family: "Staatliches", cursive;
 }
+
+#controls {
+  margin: 5rem auto 1rem auto;
+  background-color: white;
+  padding: 1rem;
+  max-width: 60rem;
+  display: grid;
+  grid-gap: 1rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+select {
+  text-transform: capitalize;
+}
+
 /* #winner.click {
   animation: spinAndGrow 1s infinite;
 }

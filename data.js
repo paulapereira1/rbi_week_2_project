@@ -3,6 +3,10 @@ const userResponseSection = document.querySelector('#user-responses')
 const questionResponseSection = document.querySelector('#question-responses')
 const winnerButton = document.querySelector('#button')
 const winner= document.querySelector('#winner')
+const ageSelect = document.querySelector('#age')
+const locationSelect = document.querySelector('#location')
+const searchInput = document.querySelector('#search')
+const main = document.querySelector("main")
 
 const fetchUserResponses = async () => {
   const response = await fetch('http://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vRA9KPqwDtGfWY4Zf-dnzQLbKHSrXvQUaHnawvJNTAcxe3JBTWPRhPkfIMiaSHBEIjVgjsFojzG_PQV/pub?output=csv');
@@ -30,7 +34,6 @@ winnerButton.addEventListener('click', winnerAnswer)
 
 const renderUserResponse = userResponse => {
   const name = userResponse['What is your first name?'];
-  console.log(userResponse)
   const age = userResponse['How old are you?'];
   const location = userResponse['Where do you live?'];
   const breakfasttype = userResponse['Which of these best describes your typical day-to-day breakfast?'];
@@ -104,3 +107,21 @@ const fetchAndShowResponses = async () => {
 };
 
 fetchAndShowResponses();
+
+const responsesFilter = responses => {
+  const selectedAge = ageSelect.value
+  const selectedLocation = locationSelect.value
+  const searchTerm = searchInput.value.toLowerCase()
+  return (selectedAge === "all" || responses.age === selectedAge) &&
+  (selectedLocation === "all" || responses.location === selectedLocation) &&
+  (responses.name.toLowerCase().includes(searchTerm) || responses.toLowerCase().includes(searchTerm))
+}
+
+const handleFilterInput = () => {
+  const filteredResponsesFilter = responses.filter(responsesFilter)
+  main.innerHTML = filteredResponsesFilter.map(renderUserResponse).join("")
+}
+
+ageSelect.addEventListener('input', handleFilterInput)
+locationSelect.addEventListener('input', handleFilterInput)
+searchInput.addEventListener('input', handleFilterInput)
