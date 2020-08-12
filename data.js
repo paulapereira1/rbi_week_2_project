@@ -93,7 +93,14 @@ const renderUserResponse = userResponse => {
     </div> 
   `;
 };
-
+const makeChart = () =>{
+  console.log('One chart, coming right up...')
+  console.log(responses);
+  const locationTally = {Canada: 0, 'United States': 0};
+  responses.forEach(response => {
+    console.log(userResponse['Where do you live?']);
+  });
+};
 
 const fetchAndShowResponses = async () => {
   await fetchUserResponses()
@@ -133,6 +140,7 @@ const handleFilterInput = () => {
   const filteredResponsesFilter = responses.filter(responsesFilter)
   main.innerHTML = filteredResponsesFilter.map(renderUserResponse).join("");
 }
+
 
 ageSelect.addEventListener('input', handleFilterInput)
 locationSelect.addEventListener('input', handleFilterInput)
